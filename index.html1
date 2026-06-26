@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZED Services — Deal-Flow Intelligence for West &amp; Central Africa</title>
+<title>ZED Services - Deal-Flow Intelligence for West &amp; Central Africa</title>
 <meta name="description" content="ZED Services is a boutique deal sourcing and advisory desk for investors seeking qualified exposure to West &amp; Central Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -241,7 +241,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
   <div class="hero-content">
     <div class="gold-line hero-eyebrow">Deal-Flow Intelligence · West &amp; Central Africa · China</div>
     <h1>Qualified deal flow, sourced by <em>operators on the ground</em>.</h1>
-    <p class="hero-sub">ZED Services is a boutique sourcing and advisory desk for investors seeking exposure to West &amp; Central Africa — without going in blind. We surface, qualify and structure opportunities that we know firsthand: we run Ivorian real estate and the China–Côte d'Ivoire trade corridor ourselves.</p>
+    <p class="hero-sub">ZED Services is a boutique sourcing and advisory desk for investors seeking exposure to West &amp; Central Africa, without going in blind. We surface, qualify and structure opportunities that we know firsthand: we run Ivorian real estate and the China–Côte d'Ivoire trade corridor ourselves.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-gold">Start a conversation</a>
       <a href="#track" class="btn-ghost">See the track record</a>
@@ -260,7 +260,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
 
 <!-- INTRO BAND -->
 <div class="intro-band">
-  <div class="intro-band-text">Bridging the gap between <span>great projects</span> and the right partners — since 2021.</div>
+  <div class="intro-band-text">Bridging the gap between <span>great projects</span> and the right partners - since 2021.</div>
   <div class="intro-dividers">
     <div class="intro-divider"><span class="div-num">5</span><span class="div-label">Countries</span></div>
     <div class="intro-divider"><span class="div-num">10+</span><span class="div-label">Mandates</span></div>
@@ -273,8 +273,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
   <div class="about-left reveal">
     <div class="gold-line">Who we are</div>
     <h2 class="about-title">A sourcing desk that also <em>operates</em>.</h2>
-    <p class="about-body">ZED Services works at the intersection of institutional finance and West African market reality. We help investors find and qualify deal flow — and because we run real estate and China–Côte d'Ivoire trade operations ourselves, the opportunities we present are ones we understand from the inside.</p>
-    <p class="about-body">Active since 2021 · SAS registered in France.</p>
+    <p class="about-body">ZED Services works at the intersection of institutional finance and West African market reality. We help investors find and qualify deal flow and because we run real estate and China–Côte d'Ivoire trade operations ourselves, the opportunities we present are ones we understand from the inside.</p>
   </div>
   <div class="about-right reveal reveal-delay-2">
     <div class="pillar">
@@ -287,22 +286,22 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
     <div class="pillar">
       <div class="pillar-num">02</div>
       <div>
-        <div class="pillar-name">Real Estate — Côte d'Ivoire</div>
-        <div class="pillar-desc">Land acquisition, project structuring and asset management. We run these deals ourselves — which is why we can vouch for them.</div>
+        <div class="pillar-name">Real Estate - Côte d'Ivoire</div>
+        <div class="pillar-desc">Land acquisition, project structuring and asset management. We run these deals ourselves, which is why we can vouch for them.</div>
       </div>
     </div>
     <div class="pillar">
       <div class="pillar-num">03</div>
       <div>
         <div class="pillar-name">China–Côte d'Ivoire Trade</div>
-        <div class="pillar-desc">Sourcing, logistics and commercial structuring along the corridor. Active supplier network in Guangzhou and Yiwu.</div>
+        <div class="pillar-desc">Sourcing, logistics and commercial structuring along the corridor. Active supplier network in Guangzhou, Foshan and Yiwu.</div>
       </div>
     </div>
     <div class="pillar">
       <div class="pillar-num">04</div>
       <div>
         <div class="pillar-name">Transaction Advisory</div>
-        <div class="pillar-desc">Investment memoranda, financial modelling and deal structuring — equity, debt, blended finance — built to institutional standard.</div>
+        <div class="pillar-desc">Investment memoranda, financial modelling and deal structuring - equity, debt, blended finance - built to institutional standard.</div>
       </div>
     </div>
   </div>
@@ -320,22 +319,22 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="cap-item" style="border-color:rgba(200,216,202,.15);">
         <span class="cap-num" style="color:var(--gold-light);">01</span>
         <div class="cap-title" style="color:var(--ivory);">Deal Sourcing &amp; Intermediation</div>
-        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Surfacing and qualifying opportunities for funds, family offices and DFIs. Targeted cross-border introductions to the right people — not broad outreach.</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Surfacing and qualifying opportunities for funds, family offices and DFIs. Targeted cross-border introductions to the right people.</div>
       </div>
       <div class="cap-item" style="border-color:rgba(200,216,202,.15);border-left:.5px solid rgba(200,216,202,.15);">
         <span class="cap-num" style="color:var(--gold-light);">02</span>
         <div class="cap-title" style="color:var(--ivory);">Transaction Advisory &amp; Structuring</div>
-        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Investment memoranda, financial modelling and deal structuring — equity, debt, blended finance — adapted to project reality, not copied from a template.</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Investment memoranda, financial modelling and deal structuring - equity, debt, blended finance - adapted to project reality, not copied from a template.</div>
       </div>
       <div class="cap-item" style="border-color:rgba(200,216,202,.15);">
         <span class="cap-num" style="color:var(--gold-light);">03</span>
-        <div class="cap-title" style="color:var(--ivory);">Real Estate — Côte d'Ivoire</div>
+        <div class="cap-title" style="color:var(--ivory);">Real Estate - Côte d'Ivoire</div>
         <div class="cap-desc" style="color:rgba(200,216,202,.6);">Land acquisition support, project structuring and asset management for real estate in Côte d'Ivoire and Senegal. Run in-house.</div>
       </div>
       <div class="cap-item" style="border-color:rgba(200,216,202,.15);border-left:.5px solid rgba(200,216,202,.15);">
         <span class="cap-num" style="color:var(--gold-light);">04</span>
         <div class="cap-title" style="color:var(--ivory);">China–Côte d'Ivoire Trade</div>
-        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Sourcing, logistics and commercial structuring along the China–CIV corridor. Supplier network in Guangzhou and Yiwu across electronics, construction materials and vehicles.</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Sourcing, logistics and commercial structuring along the China–CIV corridor. Supplier network in Guangzhou, Foshan and Yiwu across electronics, construction materials and vehicles.</div>
       </div>
     </div>
   </div>
@@ -352,7 +351,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="process-step">
         <div class="step-circle" style="background:var(--ivory);"><span class="step-num">I</span></div>
         <div class="step-title">Source</div>
-        <div class="step-desc">We map the market and surface opportunities through our field network — not job boards or public listings.</div>
+        <div class="step-desc">We map the market and surface opportunities through our field network.</div>
       </div>
       <div class="process-step">
         <div class="step-circle" style="background:var(--ivory);"><span class="step-num">II</span></div>
@@ -362,12 +361,12 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="process-step">
         <div class="step-circle" style="background:var(--ivory);"><span class="step-num">III</span></div>
         <div class="step-title">Structure</div>
-        <div class="step-desc">Equity, debt or blended finance — adapted to the project's reality and credible to institutional investors.</div>
+        <div class="step-desc">Equity, debt or blended finance, adapted to the project's reality and credible to institutional investors.</div>
       </div>
       <div class="process-step">
         <div class="step-circle" style="background:var(--ivory);"><span class="step-num">IV</span></div>
         <div class="step-title">Follow through</div>
-        <div class="step-desc">We stay involved through execution. Implementation is where things get complicated — and we do not disappear at close.</div>
+        <div class="step-desc">We stay involved through execution. Implementation is where things get complicated and we do not disappear at close.</div>
       </div>
     </div>
   </div>
@@ -403,7 +402,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
           <div class="tc-top"><span class="tc-sector">Trade</span><span class="tc-status-ongoing">Ongoing</span></div>
           <div class="tc-country">Côte d'Ivoire · China</div>
           <div class="tc-title">China–CIV Trade Corridor</div>
-          <div class="tc-desc">End-to-end import/export management. 3 containers shipped to date — sourcing in China, containerization, reception, warehousing and local resale.</div>
+          <div class="tc-desc">End-to-end import/export management. 3 containers shipped to date : sourcing in China, containerization, reception, warehousing and local resale.</div>
           <div class="tc-tags"><span class="tc-tag">Trade finance</span><span class="tc-tag">China corridor</span><span class="tc-tag">Logistics</span></div>
         </div>
       </div>
@@ -414,7 +413,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
           <div class="tc-top"><span class="tc-sector">Real Estate</span><span class="tc-status-done">Completed</span></div>
           <div class="tc-country">Senegal · Côte d'Ivoire</div>
           <div class="tc-title">Cross-Border Land Acquisition</div>
-          <div class="tc-desc">Legal and administrative support for three land acquisitions — Bingerville &amp; Abatta (CIV) and the Thiès region (Senegal) — for a French investor.</div>
+          <div class="tc-desc">Legal and administrative support for three land acquisitions - Bingerville &amp; Abatta (CIV) and the Thiès region (Senegal) for a French investor.</div>
           <div class="tc-tags"><span class="tc-tag">Cross-border</span><span class="tc-tag">Land acquisition</span></div>
         </div>
       </div>
@@ -424,8 +423,8 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
         <div class="tc-body">
           <div class="tc-top"><span class="tc-sector">Real Estate</span><span class="tc-status-done">Completed</span></div>
           <div class="tc-country">Côte d'Ivoire · Abidjan</div>
-          <div class="tc-title">Student Housing — 2 Studios</div>
-          <div class="tc-desc">Financing strategy and fundraising support for an entrepreneur developing two student studio units in Abidjan. Financing successfully closed.</div>
+          <div class="tc-title">Student Housing - 2 Studios</div>
+          <div class="tc-desc">Financing strategy and fundraising support for an Ivoirian entrepreneur developing two student studio units in Abidjan. Financing successfully closed.</div>
           <div class="tc-tags"><span class="tc-tag">Financing strategy</span><span class="tc-tag">Close</span></div>
         </div>
       </div>
@@ -435,8 +434,8 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
         <div class="tc-body">
           <div class="tc-top"><span class="tc-sector">Impact</span><span class="tc-status-ongoing">Ongoing</span></div>
           <div class="tc-country">Cameroon · South Region</div>
-          <div class="tc-title">Projet Biba — Rural Hub</div>
-          <div class="tc-desc">Community multipurpose hub structured from scratch: concept, investment memorandum, crowdfunding campaign and investor prospecting. Target €40,000.</div>
+          <div class="tc-title">Projet Biba - Rural Hub</div>
+          <div class="tc-desc">Community multipurpose hub structured from scratch: concept, investment memorandum, crowdfunding campaign and investor prospecting.</div>
           <div class="tc-tags"><span class="tc-tag">Investment memo</span><span class="tc-tag">Crowdfunding</span><span class="tc-tag">Rural impact</span></div>
         </div>
       </div>
@@ -447,7 +446,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
           <div class="tc-top"><span class="tc-sector">Business</span><span class="tc-status-ongoing">Ongoing</span></div>
           <div class="tc-country">Côte d'Ivoire · Abidjan</div>
           <div class="tc-title">Pilates Studio Launch</div>
-          <div class="tc-desc">Business structuring, equipment financing (closed), digital presence setup and competitive analysis for a premium studio launch in Abidjan.</div>
+          <div class="tc-desc">Advising a Malian entrepreneur in Côte d’Ivoire on the development of a Pilates studio. Business structuring, equipment financing (closed), digital presence setup and competitive analysis for a premium studio launch in Abidjan.</div>
           <div class="tc-tags"><span class="tc-tag">Business launch</span><span class="tc-tag">Financing</span><span class="tc-tag">Digital</span></div>
         </div>
       </div>
@@ -456,7 +455,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
     <!-- IMPACT STRIP -->
     <div class="impact-strip reveal" style="margin-top:.5px;">
       <span class="impact-label">Also</span>
-      <p class="impact-text">Alongside commercial mandates, ZED accompanies impact and community projects — including skills-transfer programmes for rural artisans in Cameroon and local business structuring in Abidjan. Details available on request.</p>
+      <p class="impact-text">Alongside commercial mandates, ZED accompanies impact and community projects including skills-transfer programmes for rural artisans in Cameroon and local business structuring in Abidjan. Details available on request.</p>
     </div>
   </div>
 </section>
@@ -473,7 +472,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="geo-card"><span class="geo-code">🇨🇮 CI</span><div class="geo-country">Côte d'Ivoire</div><div class="geo-cities">Abidjan · Bingerville<br>Real estate · Trade · Business</div></div>
       <div class="geo-card"><span class="geo-code">🇨🇲 CM</span><div class="geo-country">Cameroon</div><div class="geo-cities">Yaoundé · Ebolowa · Rural<br>Impact · Community</div></div>
       <div class="geo-card"><span class="geo-code">🇸🇳 SN</span><div class="geo-country">Senegal</div><div class="geo-cities">Thiès Region<br>Land acquisition</div></div>
-      <div class="geo-card"><span class="geo-code">🇨🇳 CN</span><div class="geo-country">China</div><div class="geo-cities">Guangzhou · Yiwu<br>Electronics · Appliances · BTP · Vehicles</div></div>
+      <div class="geo-card"><span class="geo-code">🇨🇳 CN</span><div class="geo-country">China</div><div class="geo-cities">Guangzhou · Foshan · Yiwu<br>Electronics · Appliances · BTP · Vehicles</div></div>
       <div class="geo-card"><span class="geo-code">🇫🇷 FR</span><div class="geo-country">France</div><div class="geo-cities">Coordination · Investor relations<br>SAS registered</div></div>
     </div>
   </div>
@@ -490,7 +489,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="team-card reveal">
         <div class="tm-role">Founder</div>
         <div class="tm-name">Reina Zang</div>
-        <p class="tm-bio">Based near Geneva, working at the intersection of institutional finance and African markets. Banking and international finance background (Grande École), with experience across Switzerland, France, Cameroon and London in banking, asset management and impact finance. ZED Services is where she applies that background to something she cares about.</p>
+        <p class="tm-bio">Based in Geneva area, working at the intersection of institutional finance and African markets. Banking and international finance background, with experience across Switzerland, France, Cameroon and London in banking, asset management and impact finance. ZED Services is where she applies that background to something she cares about.</p>
         <div class="tm-creds">
           <div class="tm-cred">MSc Banking &amp; International Finance · Master in Management, TBS Education</div>
           <div class="tm-cred">Experience across Switzerland, France, Cameroon and London</div>
@@ -500,7 +499,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="team-card reveal reveal-delay-1">
         <div class="tm-role">Field Advisor · Côte d'Ivoire Operations &amp; China Bridge</div>
         <div class="tm-name">Rasak Abideni</div>
-        <p class="tm-bio">ZED's anchor in Abidjan. An independent entrepreneur with over 10 years of on-the-ground experience, he has built a deep network across real estate, construction and import/export. He has accompanied every project ZED has run in Côte d'Ivoire, and develops our China connection with active contacts in Guangzhou and Yiwu.</p>
+        <p class="tm-bio">ZED's anchor in Abidjan. An independent entrepreneur with over 10 years of on-the-ground experience, he has built a deep network across real estate, construction and import/export. He has accompanied every project ZED has run in Côte d'Ivoire, and develops our China connection with active contacts in Guangzhou, Foshan and Yiwu.</p>
         <div class="tm-creds">
           <div class="tm-cred">10+ years entrepreneurship in Côte d'Ivoire</div>
           <div class="tm-cred">Network: real estate · construction · China–CIV import/export</div>
@@ -510,7 +509,7 @@ footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding
       <div class="team-card reveal reveal-delay-2">
         <div class="tm-role">Field Advisor · Social Impact &amp; Cameroon Operations</div>
         <div class="tm-name">Liliane Zang</div>
-        <p class="tm-bio">Creating and running projects in Cameroon since 2012 — the reason ZED's work on the ground there is possible. A state-certified social worker and court-accredited investigator in France, her expertise is in the human side of projects: community mobilisation, social inclusion and rural education.</p>
+        <p class="tm-bio">Creating and running projects in Cameroon since 2012, the reason ZED's work on the ground there is possible. A state-certified social worker and court-accredited investigator in France, her expertise is in the human side of projects: community mobilisation, social inclusion and rural education.</p>
         <div class="tm-creds">
           <div class="tm-cred">Cameroon field projects since 2012: socio-economic and community development</div>
           <div class="tm-cred">State-certified Social Worker (DEASS) · Court-accredited investigator, France</div>
