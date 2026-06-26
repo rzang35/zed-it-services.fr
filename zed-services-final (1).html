@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZED Services — Deal-Flow Intelligence for West &amp; Central Africa</title>
+<meta name="description" content="ZED Services is a boutique deal sourcing and advisory desk for investors seeking qualified exposure to West &amp; Central Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1a10;
+  --forest:#1a3a1f;
+  --moss:#2d5a35;
+  --sage:#4a7a52;
+  --mist:#c8d8ca;
+  --ivory:#f5f2eb;
+  --cream:#faf8f3;
+  --gold:#b8843a;
+  --gold-light:#e8c882;
+  --gold-pale:#f5e8c8;
+  --warm-gray:#8a8578;
+  --border-light:rgba(15,26,16,0.08);
+  --border-mid:rgba(15,26,16,0.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;font-weight:300;}
+::selection{background:var(--forest);color:var(--ivory);}
+a{color:inherit;}
+
+.gold-line{display:inline-flex;align-items:center;gap:.75rem;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;font-weight:400;}
+.gold-line::before{content:'';display:block;width:28px;height:.5px;background:var(--gold);}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:200;padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .3s;}
+nav.scrolled{background:rgba(250,248,243,.96);backdrop-filter:blur(16px);border-bottom:.5px solid var(--border-light);padding:1rem 4rem;}
+.nav-logo{display:flex;align-items:center;gap:.875rem;text-decoration:none;}
+.logo-mark{width:34px;height:34px;}
+.logo-text{display:flex;flex-direction:column;line-height:1;}
+.logo-zed{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;letter-spacing:.22em;color:var(--forest);}
+.logo-sub{font-size:8px;letter-spacing:.35em;color:var(--sage);text-transform:uppercase;margin-top:3px;font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;font-weight:400;transition:color .2s;opacity:.75;}
+.nav-links a:hover{opacity:1;color:var(--gold);}
+.nav-contact{font-size:10px!important;letter-spacing:.18em!important;padding:.6rem 1.5rem;border:.5px solid var(--forest);opacity:1!important;transition:background .25s,color .25s!important;}
+.nav-contact:hover{background:var(--forest)!important;color:var(--ivory)!important;}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,26,16,.72) 0%,rgba(15,26,16,.45) 40%,rgba(15,26,16,.85) 100%);z-index:1;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(200,216,202,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(200,216,202,.035) 1px,transparent 1px);background-size:80px 80px;}
+.hero-content{position:relative;z-index:2;padding:0 4rem 7rem;max-width:800px;}
+.hero-eyebrow{color:var(--gold-light);margin-bottom:2rem;opacity:0;animation:fadeUp 1s .3s ease both;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6.5vw,92px);font-weight:300;line-height:1.02;color:#f5f2eb;margin-bottom:2rem;opacity:0;animation:fadeUp 1s .5s ease both;}
+.hero h1 em{font-style:italic;color:var(--gold-light);}
+.hero-sub{font-size:14px;color:rgba(245,242,235,.7);line-height:1.85;max-width:520px;margin-bottom:3rem;font-weight:300;letter-spacing:.02em;opacity:0;animation:fadeUp 1s .7s ease both;}
+.hero-actions{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;opacity:0;animation:fadeUp 1s .9s ease both;}
+.btn-ghost{display:inline-block;padding:.875rem 2.25rem;border:.5px solid rgba(245,242,235,.5);color:var(--ivory);font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:background .25s,border-color .25s;}
+.btn-ghost:hover{background:rgba(245,242,235,.1);border-color:var(--gold-light);color:var(--gold-light);}
+.btn-gold{display:inline-block;padding:.875rem 2.25rem;background:var(--gold);color:var(--ivory);font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:background .25s,transform .2s;}
+.btn-gold:hover{background:#a67030;transform:translateY(-1px);}
+.hero-metrics{position:absolute;right:4rem;bottom:7rem;z-index:2;display:flex;flex-direction:column;gap:.5px;opacity:0;animation:fadeLeft 1s 1.1s ease both;}
+.hero-metric{background:rgba(15,26,16,.6);backdrop-filter:blur(12px);border:.5px solid rgba(200,216,202,.15);padding:1.25rem 1.75rem;min-width:180px;}
+.metric-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:4px;}
+.metric-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,216,202,.65);font-weight:400;}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fadeIn 1s 1.4s ease both;}
+.scroll-line{width:.5px;height:48px;background:linear-gradient(to bottom,rgba(245,242,235,.6),transparent);animation:scrollPulse 2s infinite;}
+.scroll-text{font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,242,235,.5);}
+@keyframes scrollPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+
+/* INTRO BAND */
+.intro-band{background:var(--forest);padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.intro-band-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;color:var(--mist);flex:1;}
+.intro-band-text span{color:var(--gold-light);}
+.intro-dividers{display:flex;gap:3rem;}
+.intro-divider{text-align:center;border-left:.5px solid rgba(200,216,202,.2);padding-left:3rem;}
+.intro-divider:first-child{border-left:none;padding-left:0;}
+.div-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold-light);display:block;}
+.div-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,216,202,.55);display:block;margin-top:3px;}
+
+/* SECTIONS */
+.section-pad{padding:9rem 4rem;}
+.section-pad-dark{padding:9rem 4rem;background:var(--forest);}
+.section-pad-light{padding:9rem 4rem;background:var(--ivory);}
+
+/* ABOUT */
+.about{padding:9rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;background:var(--cream);}
+.about-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;line-height:1.08;color:var(--forest);margin-bottom:2.5rem;}
+.about-title em{font-style:italic;color:var(--sage);}
+.about-body{font-size:14px;color:var(--warm-gray);line-height:1.9;margin-bottom:1.25rem;font-weight:300;}
+.about-left .gold-line{margin-bottom:1.75rem;}
+.pillar{padding:2rem 0;border-top:.5px solid var(--border-light);display:grid;grid-template-columns:40px 1fr;gap:1.25rem;align-items:start;}
+.pillar:hover{border-color:var(--gold);}
+.pillar:last-child{border-bottom:.5px solid var(--border-light);}
+.pillar-num{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;color:var(--gold);padding-top:3px;letter-spacing:.05em;}
+.pillar-name{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);margin-bottom:.5rem;}
+.pillar-primary{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);background:var(--forest);padding:2px 7px;display:inline-block;margin-left:.5rem;vertical-align:middle;}
+.pillar-desc{font-size:13px;color:var(--warm-gray);line-height:1.75;font-weight:300;}
+
+/* CAPABILITIES */
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;}
+.cap-item{padding:2.5rem 3rem 2.5rem 0;border-top:.5px solid var(--border-light);}
+.cap-item:nth-child(even){padding:2.5rem 0 2.5rem 3rem;border-left:.5px solid var(--border-light);}
+.cap-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);letter-spacing:.05em;margin-bottom:1rem;display:block;}
+.cap-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--forest);margin-bottom:.75rem;line-height:1.2;}
+.cap-desc{font-size:13px;color:var(--warm-gray);line-height:1.75;font-weight:300;}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:.5px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.process-step{padding:0 1.5rem;text-align:center;}
+.step-circle{width:56px;height:56px;border-radius:50%;border:.5px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;background:var(--cream);position:relative;z-index:1;}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--gold);}
+.step-title{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);margin-bottom:.75rem;}
+.step-desc{font-size:12.5px;color:var(--warm-gray);line-height:1.75;font-weight:300;}
+
+/* TRACK RECORD */
+.track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5px;background:var(--border-light);}
+.track-card{background:var(--cream);overflow:hidden;transition:background .25s;}
+.track-card:hover{background:var(--ivory);}
+.tc-img{width:100%;height:200px;object-fit:cover;object-position:center;display:block;filter:saturate(.85);}
+.tc-body{padding:1.75rem;}
+.tc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
+.tc-sector{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.tc-status-done{font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;background:rgba(45,90,53,.08);color:var(--moss);border:.5px solid rgba(45,90,53,.2);}
+.tc-status-ongoing{font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;background:rgba(184,132,58,.1);color:var(--gold);border:.5px solid rgba(184,132,58,.3);}
+.tc-country{font-size:10px;color:var(--warm-gray);margin-bottom:.5rem;opacity:.7;}
+.tc-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--forest);margin-bottom:.75rem;line-height:1.2;}
+.tc-desc{font-size:12.5px;color:var(--warm-gray);line-height:1.75;font-weight:300;}
+.tc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:1.25rem;}
+.tc-tag{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--warm-gray);border:.5px solid var(--border-mid);padding:3px 8px;opacity:.7;}
+
+/* IMPACT STRIP */
+.impact-strip{background:var(--gold-pale);border-top:.5px solid rgba(184,132,58,.25);border-bottom:.5px solid rgba(184,132,58,.25);padding:1.5rem 4rem;display:flex;align-items:center;gap:1.5rem;}
+.impact-label{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);white-space:nowrap;font-weight:500;}
+.impact-text{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;font-weight:300;color:var(--forest);line-height:1.6;}
+
+/* GEO */
+.geo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.5px;background:rgba(200,216,202,.08);}
+.geo-card{background:var(--forest);padding:2rem 1.75rem;transition:background .25s;}
+.geo-card:hover{background:rgba(255,255,255,.04);}
+.geo-code{font-size:11px;letter-spacing:.12em;font-family:'Jost',sans-serif;font-weight:500;color:var(--gold-light);margin-bottom:.75rem;display:block;}
+.geo-country{font-size:13px;font-weight:400;color:var(--mist);margin-bottom:.25rem;}
+.geo-cities{font-size:10px;color:rgba(200,216,202,.4);line-height:1.6;letter-spacing:.03em;}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5px;background:var(--border-light);}
+.team-card{background:var(--cream);padding:2.75rem;transition:background .25s;}
+.team-card:hover{background:var(--ivory);}
+.tm-role{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tm-name{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--forest);margin-bottom:1.5rem;line-height:1.1;}
+.tm-bio{font-size:13px;color:var(--warm-gray);line-height:1.9;font-weight:300;margin-bottom:1.75rem;}
+.tm-creds{display:flex;flex-direction:column;gap:.625rem;border-top:.5px solid var(--border-light);padding-top:1.25rem;}
+.tm-cred{display:flex;align-items:baseline;gap:.875rem;font-size:11.5px;color:var(--warm-gray);font-weight:300;}
+.tm-cred::before{content:'';display:block;width:14px;height:.5px;background:var(--gold);flex-shrink:0;transform:translateY(-3px);}
+
+/* CONTACT */
+.contact{background:var(--ink);padding:9rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
+.contact-left .gold-line{margin-bottom:2rem;}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,62px);font-weight:300;color:var(--ivory);line-height:1.06;margin-bottom:1.5rem;}
+.contact-title em{font-style:italic;color:var(--gold-light);}
+.contact-sub{font-size:14px;color:rgba(200,216,202,.55);line-height:1.85;font-weight:300;margin-bottom:3rem;}
+.contact-email{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--gold-light);text-decoration:none;border-bottom:.5px solid rgba(184,132,58,.3);padding-bottom:.5rem;margin-bottom:2.5rem;transition:color .2s,border-color .2s;display:inline-block;}
+.contact-email:hover{color:var(--gold);border-color:var(--gold);}
+.contact-right{display:flex;flex-direction:column;gap:.5px;}
+.ci{border:.5px solid rgba(200,216,202,.08);padding:1.75rem 2rem;background:rgba(255,255,255,.02);transition:background .25s;}
+.ci:hover{background:rgba(255,255,255,.05);}
+.ci-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.375rem;}
+.ci-value{font-size:13px;color:rgba(200,216,202,.7);font-weight:300;}
+
+footer{background:var(--ink);border-top:.5px solid rgba(200,216,202,.08);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(200,216,202,.3);letter-spacing:.05em;}
+.footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(200,216,202,.3);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(28px);}to{opacity:1;transform:translateX(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.12s;}
+.reveal-delay-2{transition-delay:.24s;}
+.reveal-delay-3{transition-delay:.36s;}
+
+/* MOBILE */
+@media(max-width:960px){
+  nav{padding:1.25rem 1.5rem;}
+  nav.scrolled{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero-content{padding:0 1.5rem 5rem;}
+  .hero-metrics{display:none;}
+  .intro-band{flex-direction:column;padding:2rem 1.5rem;}
+  .intro-dividers{gap:1.5rem;}
+  .about,.contact{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
+  .section-pad,.section-pad-dark,.section-pad-light{padding:5rem 1.5rem;}
+  .cap-grid{grid-template-columns:1fr;}
+  .cap-item:nth-child(even){padding:2.5rem 0;border-left:none;}
+  .track-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  .geo-grid{grid-template-columns:repeat(2,1fr);}
+  .process-steps{grid-template-columns:repeat(2,1fr);gap:2rem;}
+  .process-steps::before{display:none;}
+  .impact-strip{padding:1.5rem;}
+  footer{flex-direction:column;gap:.75rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 34 34" fill="none">
+      <line x1="4" y1="4" x2="30" y2="4" stroke="#1a3a1f" stroke-width="3.5" stroke-linecap="square"/>
+      <line x1="30" y1="4" x2="4" y2="30" stroke="#1a3a1f" stroke-width="2.5" stroke-linecap="square"/>
+      <line x1="4" y1="30" x2="30" y2="30" stroke="#1a3a1f" stroke-width="3.5" stroke-linecap="square"/>
+      <circle cx="4" cy="30" r="3.5" fill="#b8843a"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-zed">ZED</span>
+      <span class="logo-sub">Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#track">Track record</a></li>
+    <li><a href="#presence">Presence</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact" class="nav-contact">Enquire</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="https://www.zed-it-services.fr/img-abidjan-highway.jpg" alt="Abidjan infrastructure">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="gold-line hero-eyebrow">Deal-Flow Intelligence · West &amp; Central Africa · China</div>
+    <h1>Qualified deal flow, sourced by <em>operators on the ground</em>.</h1>
+    <p class="hero-sub">ZED Services is a boutique sourcing and advisory desk for investors seeking exposure to West &amp; Central Africa — without going in blind. We surface, qualify and structure opportunities that we know firsthand: we run Ivorian real estate and the China–Côte d'Ivoire trade corridor ourselves.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold">Start a conversation</a>
+      <a href="#track" class="btn-ghost">See the track record</a>
+    </div>
+  </div>
+  <div class="hero-metrics">
+    <div class="hero-metric"><div class="metric-num">5</div><div class="metric-label">Markets covered</div></div>
+    <div class="hero-metric"><div class="metric-num">10+</div><div class="metric-label">Mandates completed</div></div>
+    <div class="hero-metric"><div class="metric-num">2021</div><div class="metric-label">On the ground since</div></div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<div class="intro-band">
+  <div class="intro-band-text">Bridging the gap between <span>great projects</span> and the right partners — since 2021.</div>
+  <div class="intro-dividers">
+    <div class="intro-divider"><span class="div-num">5</span><span class="div-label">Countries</span></div>
+    <div class="intro-divider"><span class="div-num">10+</span><span class="div-label">Mandates</span></div>
+    <div class="intro-divider"><span class="div-num">2021</span><span class="div-label">Initiated</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left reveal">
+    <div class="gold-line">Who we are</div>
+    <h2 class="about-title">A sourcing desk that also <em>operates</em>.</h2>
+    <p class="about-body">ZED Services works at the intersection of institutional finance and West African market reality. We help investors find and qualify deal flow — and because we run real estate and China–Côte d'Ivoire trade operations ourselves, the opportunities we present are ones we understand from the inside.</p>
+    <p class="about-body">Active since 2021 · SAS registered in France.</p>
+  </div>
+  <div class="about-right reveal reveal-delay-2">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div>
+        <div class="pillar-name">Deal Sourcing &amp; Intelligence <span class="pillar-primary">Primary</span></div>
+        <div class="pillar-desc">We surface and qualify opportunities for funds, family offices and DFIs seeking West African exposure. Field-driven, not scattergun.</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div>
+        <div class="pillar-name">Real Estate — Côte d'Ivoire</div>
+        <div class="pillar-desc">Land acquisition, project structuring and asset management. We run these deals ourselves — which is why we can vouch for them.</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div>
+        <div class="pillar-name">China–Côte d'Ivoire Trade</div>
+        <div class="pillar-desc">Sourcing, logistics and commercial structuring along the corridor. Active supplier network in Guangzhou and Yiwu.</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div>
+        <div class="pillar-name">Transaction Advisory</div>
+        <div class="pillar-desc">Investment memoranda, financial modelling and deal structuring — equity, debt, blended finance — built to institutional standard.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="section-pad-dark" id="capabilities">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:4rem;">
+      <div class="gold-line" style="color:var(--gold-light);">What we do</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;line-height:1.08;color:var(--ivory);margin-top:1.25rem;">Where we add <em style="font-style:italic;color:var(--gold-light);">value</em>.</h2>
+      <p style="font-size:14px;color:rgba(200,216,202,.6);line-height:1.85;max-width:520px;margin-top:1rem;font-weight:300;">We are not a generalist firm. We focus on a few areas where our field presence makes a concrete difference.</p>
+    </div>
+    <div class="cap-grid reveal">
+      <div class="cap-item" style="border-color:rgba(200,216,202,.15);">
+        <span class="cap-num" style="color:var(--gold-light);">01</span>
+        <div class="cap-title" style="color:var(--ivory);">Deal Sourcing &amp; Intermediation</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Surfacing and qualifying opportunities for funds, family offices and DFIs. Targeted cross-border introductions to the right people — not broad outreach.</div>
+      </div>
+      <div class="cap-item" style="border-color:rgba(200,216,202,.15);border-left:.5px solid rgba(200,216,202,.15);">
+        <span class="cap-num" style="color:var(--gold-light);">02</span>
+        <div class="cap-title" style="color:var(--ivory);">Transaction Advisory &amp; Structuring</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Investment memoranda, financial modelling and deal structuring — equity, debt, blended finance — adapted to project reality, not copied from a template.</div>
+      </div>
+      <div class="cap-item" style="border-color:rgba(200,216,202,.15);">
+        <span class="cap-num" style="color:var(--gold-light);">03</span>
+        <div class="cap-title" style="color:var(--ivory);">Real Estate — Côte d'Ivoire</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Land acquisition support, project structuring and asset management for real estate in Côte d'Ivoire and Senegal. Run in-house.</div>
+      </div>
+      <div class="cap-item" style="border-color:rgba(200,216,202,.15);border-left:.5px solid rgba(200,216,202,.15);">
+        <span class="cap-num" style="color:var(--gold-light);">04</span>
+        <div class="cap-title" style="color:var(--ivory);">China–Côte d'Ivoire Trade</div>
+        <div class="cap-desc" style="color:rgba(200,216,202,.6);">Sourcing, logistics and commercial structuring along the China–CIV corridor. Supplier network in Guangzhou and Yiwu across electronics, construction materials and vehicles.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section-pad-light">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:4rem;">
+      <div class="gold-line">How we work</div>
+      <h2 class="about-title" style="margin-top:1.25rem;margin-bottom:0;">From signal to <em>close</em>.</h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-circle" style="background:var(--ivory);"><span class="step-num">I</span></div>
+        <div class="step-title">Source</div>
+        <div class="step-desc">We map the market and surface opportunities through our field network — not job boards or public listings.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle" style="background:var(--ivory);"><span class="step-num">II</span></div>
+        <div class="step-title">Qualify</div>
+        <div class="step-desc">We do the groundwork: site visits, counterparties, numbers. We present deals we would back ourselves.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle" style="background:var(--ivory);"><span class="step-num">III</span></div>
+        <div class="step-title">Structure</div>
+        <div class="step-desc">Equity, debt or blended finance — adapted to the project's reality and credible to institutional investors.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle" style="background:var(--ivory);"><span class="step-num">IV</span></div>
+        <div class="step-title">Follow through</div>
+        <div class="step-desc">We stay involved through execution. Implementation is where things get complicated — and we do not disappear at close.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="section-pad" id="track">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;">
+      <div>
+        <div class="gold-line">Track record</div>
+        <h2 class="about-title" style="margin-top:1.25rem;margin-bottom:0;">Selected work, <em>presented with discretion</em>.</h2>
+      </div>
+      <p style="font-size:13px;color:var(--warm-gray);line-height:1.85;align-self:end;font-weight:300;">A selection of mandates structured, financed or accompanied since 2021. Details available on request.</p>
+    </div>
+
+    <div class="track-grid">
+      <!-- R+3 -->
+      <div class="track-card reveal">
+        <img class="tc-img" src="https://www.zed-it-services.fr/img-crane.jpg" alt="R+3 Residential Building Abidjan">
+        <div class="tc-body">
+          <div class="tc-top"><span class="tc-sector">Real Estate</span><span class="tc-status-done">Completed</span></div>
+          <div class="tc-country">Côte d'Ivoire · Anono, Abidjan</div>
+          <div class="tc-title">R+3 Residential Building</div>
+          <div class="tc-desc">Land acquisition and construction management of a 24-unit residential building (~€300K), including rental management of the units.</div>
+          <div class="tc-tags"><span class="tc-tag">Land acquisition</span><span class="tc-tag">Construction</span><span class="tc-tag">Asset mgmt</span></div>
+        </div>
+      </div>
+      <!-- CHINA TRADE -->
+      <div class="track-card reveal reveal-delay-1">
+        <img class="tc-img" src="https://www.zed-it-services.fr/img-containers.jpg" alt="China CIV Trade Corridor">
+        <div class="tc-body">
+          <div class="tc-top"><span class="tc-sector">Trade</span><span class="tc-status-ongoing">Ongoing</span></div>
+          <div class="tc-country">Côte d'Ivoire · China</div>
+          <div class="tc-title">China–CIV Trade Corridor</div>
+          <div class="tc-desc">End-to-end import/export management. 3 containers shipped to date — sourcing in China, containerization, reception, warehousing and local resale.</div>
+          <div class="tc-tags"><span class="tc-tag">Trade finance</span><span class="tc-tag">China corridor</span><span class="tc-tag">Logistics</span></div>
+        </div>
+      </div>
+      <!-- LAND -->
+      <div class="track-card reveal reveal-delay-2">
+        <img class="tc-img" src="https://www.zed-it-services.fr/img-road.jpg" alt="Land Acquisition CIV Senegal">
+        <div class="tc-body">
+          <div class="tc-top"><span class="tc-sector">Real Estate</span><span class="tc-status-done">Completed</span></div>
+          <div class="tc-country">Senegal · Côte d'Ivoire</div>
+          <div class="tc-title">Cross-Border Land Acquisition</div>
+          <div class="tc-desc">Legal and administrative support for three land acquisitions — Bingerville &amp; Abatta (CIV) and the Thiès region (Senegal) — for a French investor.</div>
+          <div class="tc-tags"><span class="tc-tag">Cross-border</span><span class="tc-tag">Land acquisition</span></div>
+        </div>
+      </div>
+      <!-- STUDENT HOUSING -->
+      <div class="track-card reveal">
+        <img class="tc-img" src="https://www.zed-it-services.fr/img-city.jpg" alt="Student Housing Abidjan">
+        <div class="tc-body">
+          <div class="tc-top"><span class="tc-sector">Real Estate</span><span class="tc-status-done">Completed</span></div>
+          <div class="tc-country">Côte d'Ivoire · Abidjan</div>
+          <div class="tc-title">Student Housing — 2 Studios</div>
+          <div class="tc-desc">Financing strategy and fundraising support for an entrepreneur developing two student studio units in Abidjan. Financing successfully closed.</div>
+          <div class="tc-tags"><span class="tc-tag">Financing strategy</span><span class="tc-tag">Close</span></div>
+        </div>
+      </div>
+      <!-- BIBA -->
+      <div class="track-card reveal reveal-delay-1">
+        <img class="tc-img" src="https://www.zed-it-services.fr/img-biba.jpg" alt="Projet Biba Cameroun">
+        <div class="tc-body">
+          <div class="tc-top"><span class="tc-sector">Impact</span><span class="tc-status-ongoing">Ongoing</span></div>
+          <div class="tc-country">Cameroon · South Region</div>
+          <div class="tc-title">Projet Biba — Rural Hub</div>
+          <div class="tc-desc">Community multipurpose hub structured from scratch: concept, investment memorandum, crowdfunding campaign and investor prospecting. Target €40,000.</div>
+          <div class="tc-tags"><span class="tc-tag">Investment memo</span><span class="tc-tag">Crowdfunding</span><span class="tc-tag">Rural impact</span></div>
+        </div>
+      </div>
+      <!-- PILATES -->
+      <div class="track-card reveal reveal-delay-2">
+        <img class="tc-img" src="https://www.zed-it-services.fr/img-pilates.jpg" alt="Pilates Studio Abidjan">
+        <div class="tc-body">
+          <div class="tc-top"><span class="tc-sector">Business</span><span class="tc-status-ongoing">Ongoing</span></div>
+          <div class="tc-country">Côte d'Ivoire · Abidjan</div>
+          <div class="tc-title">Pilates Studio Launch</div>
+          <div class="tc-desc">Business structuring, equipment financing (closed), digital presence setup and competitive analysis for a premium studio launch in Abidjan.</div>
+          <div class="tc-tags"><span class="tc-tag">Business launch</span><span class="tc-tag">Financing</span><span class="tc-tag">Digital</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPACT STRIP -->
+    <div class="impact-strip reveal" style="margin-top:.5px;">
+      <span class="impact-label">Also</span>
+      <p class="impact-text">Alongside commercial mandates, ZED accompanies impact and community projects — including skills-transfer programmes for rural artisans in Cameroon and local business structuring in Abidjan. Details available on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENCE -->
+<section class="section-pad-dark" id="presence">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:3rem;">
+      <div class="gold-line" style="color:var(--gold-light);">Where we operate</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;line-height:1.08;color:var(--ivory);margin-top:1.25rem;">Five markets. <em style="font-style:italic;color:var(--gold-light);">One network.</em></h2>
+      <p style="font-size:14px;color:rgba(200,216,202,.55);line-height:1.85;max-width:500px;margin-top:1rem;font-weight:300;">Our edge comes from people on the ground. Field presence across West &amp; Central Africa, with established sourcing hubs in China.</p>
+    </div>
+    <div class="geo-grid reveal">
+      <div class="geo-card"><span class="geo-code">🇨🇮 CI</span><div class="geo-country">Côte d'Ivoire</div><div class="geo-cities">Abidjan · Bingerville<br>Real estate · Trade · Business</div></div>
+      <div class="geo-card"><span class="geo-code">🇨🇲 CM</span><div class="geo-country">Cameroon</div><div class="geo-cities">Yaoundé · Ebolowa · Rural<br>Impact · Community</div></div>
+      <div class="geo-card"><span class="geo-code">🇸🇳 SN</span><div class="geo-country">Senegal</div><div class="geo-cities">Thiès Region<br>Land acquisition</div></div>
+      <div class="geo-card"><span class="geo-code">🇨🇳 CN</span><div class="geo-country">China</div><div class="geo-cities">Guangzhou · Yiwu<br>Electronics · Appliances · BTP · Vehicles</div></div>
+      <div class="geo-card"><span class="geo-code">🇫🇷 FR</span><div class="geo-country">France</div><div class="geo-cities">Coordination · Investor relations<br>SAS registered</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section-pad" id="team">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:4rem;">
+      <div class="gold-line">The team</div>
+      <h2 class="about-title" style="margin-top:1.25rem;margin-bottom:0;">Three people. <em>Three complementary roles.</em></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="tm-role">Founder</div>
+        <div class="tm-name">Reina Zang</div>
+        <p class="tm-bio">Based near Geneva, working at the intersection of institutional finance and African markets. Banking and international finance background (Grande École), with experience across Switzerland, France, Cameroon and London in banking, asset management and impact finance. ZED Services is where she applies that background to something she cares about.</p>
+        <div class="tm-creds">
+          <div class="tm-cred">MSc Banking &amp; International Finance · Master in Management, TBS Education</div>
+          <div class="tm-cred">Experience across Switzerland, France, Cameroon and London</div>
+          <div class="tm-cred">Expertise: impact finance · financial audit · private equity</div>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="tm-role">Field Advisor · Côte d'Ivoire Operations &amp; China Bridge</div>
+        <div class="tm-name">Rasak Abideni</div>
+        <p class="tm-bio">ZED's anchor in Abidjan. An independent entrepreneur with over 10 years of on-the-ground experience, he has built a deep network across real estate, construction and import/export. He has accompanied every project ZED has run in Côte d'Ivoire, and develops our China connection with active contacts in Guangzhou and Yiwu.</p>
+        <div class="tm-creds">
+          <div class="tm-cred">10+ years entrepreneurship in Côte d'Ivoire</div>
+          <div class="tm-cred">Network: real estate · construction · China–CIV import/export</div>
+          <div class="tm-cred">Supplier contacts: electronics, appliances, BTP, vehicles</div>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="tm-role">Field Advisor · Social Impact &amp; Cameroon Operations</div>
+        <div class="tm-name">Liliane Zang</div>
+        <p class="tm-bio">Creating and running projects in Cameroon since 2012 — the reason ZED's work on the ground there is possible. A state-certified social worker and court-accredited investigator in France, her expertise is in the human side of projects: community mobilisation, social inclusion and rural education.</p>
+        <div class="tm-creds">
+          <div class="tm-cred">Cameroon field projects since 2012: socio-economic and community development</div>
+          <div class="tm-cred">State-certified Social Worker (DEASS) · Court-accredited investigator, France</div>
+          <div class="tm-cred">Expertise: child protection · rural education · family mediation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left reveal">
+    <div class="gold-line" style="color:var(--gold-light);">Get in touch</div>
+    <h2 class="contact-title">A project. <em>A conversation.</em></h2>
+    <p class="contact-sub">We are selective in the mandates we take on. If you have a project seeking capital, or you are an investor looking for qualified deal flow in West or Central Africa, we are happy to talk.</p>
+    <a href="mailto:contact@zed-services.fr" class="contact-email">contact@zed-services.fr</a>
+    <br>
+    <a href="https://www.linkedin.com/company/zed-services-fr/" target="_blank" class="btn-gold">Connect on LinkedIn</a>
+  </div>
+  <div class="contact-right reveal reveal-delay-2">
+    <div class="ci"><div class="ci-label">Primary markets</div><div class="ci-value">Côte d'Ivoire · Cameroon · Senegal</div></div>
+    <div class="ci"><div class="ci-label">Sectors</div><div class="ci-value">Real estate · Trade · Impact · Agriculture</div></div>
+    <div class="ci"><div class="ci-label">Presence</div><div class="ci-value">Field teams in West &amp; Central Africa · Sourcing network in China</div></div>
+    <div class="ci"><div class="ci-label">Based</div><div class="ci-value">France (SAS) · Active since 2021</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2025 ZED Services SAS · France · All rights reserved</div>
+  <div class="footer-slogan">Bridging the gap between great projects and the right partners.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');observer.unobserve(el.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
