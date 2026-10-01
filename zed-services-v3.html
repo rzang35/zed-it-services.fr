@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZED Services | China sourcing &amp; project facilitation, West &amp; Central Africa</title>
+<meta name="description" content="ZED Services helps entrepreneurs source and import from China, structures projects in Côte d'Ivoire, Cameroon and Senegal, and provides field services for organisations active in the region.">
+<meta name="theme-color" content="#1a3a1f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   1. TOKENS
+   Base palette kept from the original site (forest, moss,
+   gold, ivory), refined with finer hairlines and deeper greens.
+   ========================================================= */
+:root{
+  --ink:#0f1a10;
+  --forest:#1a3a1f;
+  --forest-deep:#122a16;
+  --moss:#2d5a35;
+  --sage:#4a7a52;
+  --mist:#c8d8ca;
+  --ivory:#f5f2eb;
+  --cream:#faf8f3;
+  --gold:#b8843a;
+  --gold-light:#e8c882;
+  --gold-pale:#f2e4c4;
+  --warm-gray:#7d786b;
+  --line:rgba(15,26,16,.09);
+  --line-strong:rgba(15,26,16,.2);
+
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+  --pad:1.5rem;                 /* side padding, mobile first */
+  --ease:cubic-bezier(.22,1,.36,1);
+
+  /* film-grain texture for dark blocks (inline SVG, no request) */
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+
+  box-sizing:border-box;
+}
+@media (min-width:960px){ :root{ --pad:4rem; } }
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-font-smoothing:antialiased;text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.75;color:var(--ink);background:var(--cream);overflow-x:hidden}
+body.locked{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--forest);color:var(--ivory)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.grain{position:relative;isolation:isolate}
+.grain::after{display:none;content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.06;pointer-events:none;z-index:-1;mix-blend-mode:overlay}
+
+/* Section label: small serif italic preceded by a gold rule
+   (replaces the tracked all-caps eyebrows of the old site) */
+.label{display:inline-flex;align-items:center;gap:.75rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--gold)}
+.label::before{content:"";width:2.25rem;height:1px;background:currentColor}
+
+/* Display headings: two-line construction, second line italic */
+.display{font-family:var(--serif);font-weight:300;line-height:1.04;letter-spacing:-.005em}
+.display .l2{display:block;font-style:italic}
+.h2{font-size:clamp(2.7rem,5.6vw,4.6rem)}
+
+/* =========================================================
+   3. NAVIGATION
+   Transparent over the hero, then condenses into a floating
+   blurred bar. A thin gold line tracks reading progress.
+   ========================================================= */
+.nav{position:fixed;inset:0 0 auto;z-index:300;padding:calc(env(safe-area-inset-top,0px) + 1rem) var(--pad) 1rem;transition:padding .45s var(--ease)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1280px;margin:0 auto;padding:.5rem .25rem;border:1px solid transparent;transition:background .45s var(--ease),border-color .45s,padding .45s var(--ease),box-shadow .45s}
+.nav.scrolled{padding-top:calc(env(safe-area-inset-top,0px) + .6rem)}
+.nav.scrolled .nav-inner{background:rgba(250,248,243,.72);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border-color:rgba(15,26,16,.1);padding:.45rem 1rem;box-shadow:0 10px 30px -18px rgba(15,26,16,.45)}
+.nav-progress{position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+.nav.scrolled .nav-inner{position:relative}
+
+.logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.logo svg{width:32px;height:32px}
+.logo svg .stroke{stroke:var(--ivory);transition:stroke .45s}
+.nav.scrolled .logo svg .stroke{stroke:var(--forest)}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-zed{font-family:var(--serif);font-size:1.35rem;letter-spacing:.2em;color:var(--ivory);transition:color .45s}
+.logo-sub{font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);margin-top:2px;transition:color .45s}
+.nav.scrolled .logo-zed{color:var(--forest)}
+.nav.scrolled .logo-sub{color:var(--sage)}
+
+.nav-links{display:none;list-style:none;align-items:center;gap:2.25rem}
+.nav-links a{text-decoration:none;font-size:.82rem;font-weight:400;color:var(--ivory);opacity:.8;position:relative;transition:opacity .2s,color .45s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav-links a:hover{opacity:1}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav.scrolled .nav-links a{color:var(--forest)}
+.nav-cta{padding:.55rem 1.25rem;border:1px solid var(--gold-light);opacity:1!important}
+.nav-cta::after{display:none}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ivory)!important}
+.nav.scrolled .nav-cta{border-color:var(--forest)}
+
+.burger{display:flex;flex-direction:column;gap:6px;padding:.6rem}
+.burger span{display:block;width:24px;height:1.5px;background:var(--ivory);transition:transform .35s var(--ease),opacity .2s,background .45s}
+.nav.scrolled .burger span{background:var(--forest)}
+.burger[aria-expanded="true"] span:first-child{transform:translateY(3.75px) rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:translateY(-3.75px) rotate(-45deg)}
+
+.mobile-menu{position:fixed;inset:0;z-index:250;background:var(--forest-deep);display:flex;flex-direction:column;justify-content:flex-end;padding:6rem var(--pad) calc(3rem + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu a{font-family:var(--serif);font-size:2.6rem;line-height:1.25;color:var(--ivory);text-decoration:none}
+.mobile-menu a:hover{color:var(--gold-light)}
+.mobile-menu p{margin-top:2rem;color:var(--mist);opacity:.6;font-size:.9rem}
+
+@media (min-width:960px){
+  .nav-links{display:flex}
+  .burger,.mobile-menu{display:none}
+}
+
+/* =========================================================
+   4. HERO — asymmetric split
+   Mobile: image on top, forest panel overlaps it upward.
+   Desktop: forest panel on the left bleeds over the image.
+   ========================================================= */
+.hero{position:relative;background:var(--forest-deep);color:var(--ivory);overflow:hidden}
+.hero-media{position:relative;height:56vh;min-height:340px}
+.hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.05)}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,26,16,.55) 0%,rgba(15,26,16,.15) 45%,rgba(18,42,22,.95) 100%)}
+
+.hero-panel{position:relative;z-index:2;margin-top:-6rem;padding:0 var(--pad) 4rem}
+.hero-eyebrow{display:flex;flex-direction:column;gap:.25rem;margin-bottom:1.5rem}
+.hero-eyebrow .label{color:var(--gold-light)}
+.hero-eyebrow small{font-size:.8rem;color:var(--mist);opacity:.7;letter-spacing:.04em;padding-left:3rem}
+.hero h1{font-size:clamp(3rem,8.5vw,6.5rem);color:var(--ivory)}
+.hero h1 .l2{color:var(--gold-light)}
+.hero-sub{max-width:34rem;margin:1.75rem 0 2.25rem;color:rgba(245,242,235,.78);font-size:1rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
+
+/* hero ledger: metrics in a gold-ruled box */
+.ledger{display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border-top:1px solid rgba(232,200,130,.35)}
+.ledger div{padding:1rem .75rem 0 0}
+.ledger strong{display:block;font-family:var(--serif);font-weight:400;font-size:2.4rem;line-height:1;color:var(--gold-light)}
+.ledger span{display:block;font-size:.75rem;color:var(--mist);opacity:.75;margin-top:.35rem;line-height:1.4}
+
+/* one orchestrated load sequence */
+.hero [data-in]{opacity:0;transform:translateY(24px);animation:heroIn 1.1s var(--ease) forwards}
+.hero [data-in="1"]{animation-delay:.15s}.hero [data-in="2"]{animation-delay:.3s}
+.hero [data-in="3"]{animation-delay:.45s}.hero [data-in="4"]{animation-delay:.6s}
+.hero [data-in="5"]{animation-delay:.8s}
+@keyframes heroIn{to{opacity:1;transform:none}}
+
+@media (min-width:960px){
+  .hero{min-height:100vh;display:grid;grid-template-columns:repeat(12,1fr);align-items:stretch}
+  .hero-media{grid-column:6/13;grid-row:1;height:auto;min-height:100vh}
+  .hero-media::after{background:linear-gradient(90deg,rgba(18,42,22,1) 0%,rgba(18,42,22,.35) 30%,rgba(15,26,16,.1) 70%,rgba(15,26,16,.45) 100%)}
+  .hero-panel{grid-column:1/9;grid-row:1;margin:0;align-self:end;padding:9rem 0 5rem var(--pad)}
+  .ledger{max-width:34rem}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1.05rem 2.4rem;font-size:.78rem;font-weight:400;letter-spacing:.14em;text-decoration:none;border:1px solid transparent;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.btn-gold{background:var(--gold);color:var(--ivory)}
+.btn-gold:hover{background:#a67030}
+.btn-ghost{border-color:rgba(245,242,235,.45);color:var(--ivory)}
+.btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.btn-ink{border-color:var(--forest);color:var(--forest)}
+.btn-ink:hover{background:var(--forest);color:var(--ivory)}
+
+/* =========================================================
+   5. INTRO BAND — slogan with three facts
+   ========================================================= */
+.band{background:var(--gold-pale);border-bottom:1px solid rgba(184,132,58,.3)}
+.band .wrap{display:grid;gap:2rem;padding-top:2.5rem;padding-bottom:2.5rem}
+.band p{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;color:var(--forest)}
+.band p em{color:var(--gold)}
+.band ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.band li{border-left:1px solid rgba(184,132,58,.45);padding-left:1rem}
+.band strong{display:block;font-family:var(--serif);font-weight:400;font-size:2rem;line-height:1;color:var(--forest)}
+.band span{font-size:.78rem;color:var(--forest);opacity:.7;line-height:1.35;display:block;margin-top:.3rem}
+@media (min-width:960px){.band .wrap{grid-template-columns:1.2fr 1fr;align-items:center}}
+
+/* =========================================================
+   6. ABOUT — sticky title + focusable pillars
+   Hovering one pillar dims the others (focus effect).
+   ========================================================= */
+.about{padding:6rem 0}
+.about .wrap{display:grid;gap:3rem}
+.about h2{color:var(--forest);margin:1.25rem 0 1.75rem}
+.about h2 .l2{color:var(--sage)}
+.about-body{color:var(--warm-gray);max-width:30rem}
+
+.pillars{list-style:none;border-top:1px solid var(--line-strong)}
+.pillar{position:relative;padding:1.75rem 0 1.75rem 1.5rem;border-bottom:1px solid var(--line);transition:opacity .4s var(--ease),padding .4s var(--ease)}
+.pillar::before{content:"";position:absolute;left:0;top:1.75rem;bottom:1.75rem;width:2px;background:var(--gold);transform:scaleY(.25);transform-origin:top;transition:transform .5s var(--ease)}
+.pillar h3{font-family:var(--serif);font-weight:400;font-size:1.8rem;line-height:1.15;color:var(--forest);display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.pillar .tag-primary{font-family:var(--sans);font-size:.68rem;letter-spacing:.06em;background:var(--forest);color:var(--ivory);padding:.2rem .55rem}
+.pillar p{color:var(--warm-gray);font-size:.95rem;margin-top:.5rem;max-width:34rem}
+@media (hover:hover){
+  .pillars:hover .pillar,.pillars:focus-within .pillar{opacity:.4}
+  .pillars .pillar:hover,.pillars .pillar:focus-within{opacity:1;padding-left:2.25rem}
+  .pillar:hover::before,.pillar:focus-within::before{transform:scaleY(1)}
+}
+@media (min-width:960px){
+  .about{padding:10rem 0}
+  .about .wrap{grid-template-columns:5fr 7fr;gap:6rem;align-items:start}
+  .about-left{position:sticky;top:8rem}
+}
+
+/* =========================================================
+   7. CAPABILITIES — forest block, staggered columns
+   ========================================================= */
+.cap{background:var(--forest);color:var(--ivory);padding:6rem 0}
+.cap-head{display:grid;gap:1.25rem;margin-bottom:3.5rem}
+.cap-head .label{color:var(--gold-light)}
+.cap-head h2 .l2{color:var(--gold-light)}
+.cap-head p{color:rgba(200,216,202,.7);max-width:30rem}
+.cap-grid{display:grid;gap:0}
+.cap-item{padding:2rem 0;border-top:1px solid rgba(200,216,202,.18)}
+.cap-item h3{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.1;color:var(--ivory);margin-bottom:.75rem}
+.cap-item p{color:rgba(200,216,202,.72);font-size:.95rem;max-width:30rem}
+.cap-item .who{display:block;font-size:.78rem;color:var(--gold-light);margin-bottom:.75rem}
+@media (min-width:960px){
+  .cap{padding:10rem 0}
+  .cap-head{grid-template-columns:1fr 1fr;align-items:end}
+  .cap-grid{grid-template-columns:1fr 1fr;column-gap:5rem}
+  .cap-item:nth-child(even){transform:translateY(5rem)}   /* asymmetric stagger */
+  .cap-grid{padding-bottom:5rem}
+}
+
+/* =========================================================
+   8. PROCESS — real sequence, lit step by step on scroll
+   ========================================================= */
+.process{background:var(--ivory);padding:6rem 0}
+.process h2{color:var(--forest);margin:1.25rem 0 3.5rem}
+.process h2 .l2{color:var(--sage)}
+.steps{list-style:none;position:relative;display:grid;gap:2.5rem;padding-left:2rem}
+.steps::before,.steps .rail{content:"";position:absolute;left:.45rem;top:.4rem;bottom:.4rem;width:1px;background:var(--line-strong)}
+.steps .rail{background:var(--gold);transform-origin:top;transform:scaleY(0);transition:transform .8s var(--ease)}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-1.85rem;top:.55rem;width:.75rem;height:.75rem;border-radius:50%;border:1px solid var(--gold);background:var(--ivory);transition:background .5s}
+.step.lit::before{background:var(--gold)}
+.step .num{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--gold);line-height:1}
+.step h3{font-family:var(--serif);font-weight:400;font-size:1.7rem;color:var(--forest);line-height:1.2;margin:.25rem 0 .4rem}
+.step p{color:var(--warm-gray);font-size:.95rem;max-width:22rem}
+.step{opacity:.45;transition:opacity .6s var(--ease)}
+.step.lit{opacity:1}
+@media (min-width:960px){
+  .process{padding:9rem 0}
+  .steps{grid-template-columns:repeat(4,1fr);gap:2rem;padding:2.25rem 0 0}
+  .steps::before,.steps .rail{left:0;right:0;top:0;bottom:auto;width:auto;height:1px}
+  .steps .rail{transform:scaleX(0);transform-origin:left}
+  .step::before{left:0;top:-2.25rem;transform:translateY(-50%)}
+}
+
+/* =========================================================
+   9. TRACK RECORD — filters, asymmetric grid, drawer
+   ========================================================= */
+.track{padding:6rem 0}
+.track-head{display:grid;gap:1.5rem;margin-bottom:2.5rem}
+.track-head h2{color:var(--forest);margin-top:1.25rem}
+.track-head h2 .l2{color:var(--sage)}
+.track-head p{color:var(--warm-gray);max-width:28rem}
+
+.filters{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem;overflow-x:auto}
+.filter{position:relative;padding:.85rem 0;font-size:.92rem;color:var(--warm-gray);white-space:nowrap;transition:color .25s}
+.filter sup{font-size:.65rem;margin-left:.2rem;color:var(--gold)}
+.filter::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--forest);transform:scaleX(0);transition:transform .4s var(--ease)}
+.filter:hover{color:var(--forest)}
+.filter[aria-pressed="true"]{color:var(--forest);font-weight:400}
+.filter[aria-pressed="true"]::after{transform:scaleX(1)}
+
+.grid{display:grid;gap:2.5rem 1.5rem}
+.card{position:relative;cursor:pointer;text-align:left;width:100%;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.card.hide{display:none}
+.card.reveal.fading{opacity:0;transform:translateY(12px)}
+.card-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--mist)}
+.card-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.8);transition:transform 1s var(--ease),filter .6s}
+.card:hover .card-img img,.card:focus-visible .card-img img{transform:scale(1.04);filter:saturate(1)}
+.card .open{position:absolute;right:0;bottom:0;background:var(--cream);color:var(--forest);font-size:.78rem;padding:.55rem .9rem;transform:translateY(100%);transition:transform .45s var(--ease)}
+.card:hover .open,.card:focus-visible .open{transform:none}
+.card-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1.1rem;font-size:.78rem}
+.card-meta .sector{color:var(--gold)}
+.status{padding:.15rem .55rem;border:1px solid}
+.status.done{color:var(--moss);border-color:rgba(45,90,53,.3);background:rgba(45,90,53,.06)}
+.status.ongoing{color:var(--gold);border-color:rgba(184,132,58,.4);background:rgba(184,132,58,.06)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:1.85rem;line-height:1.15;color:var(--forest);margin:.5rem 0 .35rem}
+.card .country{font-size:.82rem;color:var(--warm-gray)}
+.card .desc,.card .tags{display:none}   /* full details live in the drawer */
+
+@media (min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1080px){
+  .track{padding:10rem 0}
+  .track-head{grid-template-columns:1.2fr 1fr;align-items:end}
+  .grid{grid-template-columns:repeat(6,1fr);gap:4rem 2rem}
+  .grid .card{grid-column:span 2}
+  /* asymmetric rhythm: the first visible card leads, large */
+  .grid .card.lead{grid-column:span 4}
+  .grid .card.lead .card-img{aspect-ratio:16/10}
+  .grid .card.lead h3{font-size:2.3rem}
+  .grid .card.offset{margin-top:5rem}
+}
+
+/* impact strip */
+.impact{margin-top:5rem;display:grid;gap:1rem;padding:2rem;background:var(--gold-pale);border-left:3px solid var(--gold)}
+.impact .label{font-size:1rem}
+.impact p{font-family:var(--serif);font-size:1.35rem;line-height:1.45;color:var(--forest)}
+@media (min-width:960px){.impact{grid-template-columns:10rem 1fr;align-items:baseline;padding:2.5rem 3rem}}
+
+/* drawer */
+.scrim{position:fixed;inset:0;z-index:400;background:rgba(15,26,16,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;z-index:410;top:0;right:0;height:100%;width:min(100%,560px);background:var(--cream);overflow-y:auto;transform:translateX(100%);transition:transform .6s var(--ease);padding-bottom:env(safe-area-inset-bottom,0px);visibility:hidden;transition:transform .6s var(--ease),visibility .6s}
+.drawer.open{transform:none;visibility:visible;box-shadow:-30px 0 60px -30px rgba(15,26,16,.6)}
+.drawer-img{aspect-ratio:16/10;width:100%;object-fit:cover}
+.drawer-close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 1rem);right:1rem;width:44px;height:44px;border-radius:50%;background:var(--cream);color:var(--forest);font-size:1.4rem;line-height:1;display:grid;place-items:center;box-shadow:0 4px 18px rgba(15,26,16,.25)}
+.drawer-close:hover{background:var(--forest);color:var(--ivory)}
+.drawer-body{padding:2rem var(--pad) 3rem}
+@media (min-width:960px){.drawer-body{padding:2.5rem 3rem 3.5rem}}
+.drawer-body .card-meta{margin:0 0 1rem}
+.drawer-body h3{font-family:var(--serif);font-weight:400;font-size:2.4rem;line-height:1.05;color:var(--forest)}
+.drawer-body .country{color:var(--warm-gray);font-size:.9rem;margin:.5rem 0 1.5rem}
+.drawer-body .desc{font-size:1rem;color:var(--ink);border-top:1px solid var(--line);padding-top:1.5rem}
+.drawer-body h4{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.2rem;color:var(--gold);margin:2rem 0 .75rem}
+.drawer-body .tags{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
+.drawer-body .tags li{font-size:.8rem;padding:.3rem .75rem;border:1px solid var(--line-strong);color:var(--forest)}
+.drawer-body .note{margin-top:2rem;font-size:.88rem;color:var(--warm-gray)}
+.drawer-body .btn{margin-top:1.5rem}
+
+/* =========================================================
+   10. PRESENCE — deep forest block, ledger of places
+   ========================================================= */
+.presence{background:var(--forest-deep);color:var(--ivory);padding:6rem 0}
+.presence .label{color:var(--gold-light)}
+.presence h2{margin:1.25rem 0 1.25rem}
+.presence h2 .l2{color:var(--gold-light)}
+.presence-intro{color:rgba(245,242,235,.7);max-width:30rem;margin-bottom:3rem}
+.places{list-style:none;border-top:1px solid rgba(232,200,130,.25)}
+.place{display:grid;grid-template-columns:3rem 1fr;gap:.25rem 1rem;padding:1.4rem 0;border-bottom:1px solid rgba(232,200,130,.18);transition:background .35s,padding .35s var(--ease)}
+.place .code{font-size:.8rem;font-weight:500;letter-spacing:.08em;color:var(--gold-light);padding-top:.5rem}
+.place h3{font-family:var(--serif);font-weight:300;font-size:2rem;line-height:1.1}
+.place .cities{grid-column:2;font-size:.9rem;color:rgba(245,242,235,.65)}
+.place .what{grid-column:2;font-size:.82rem;color:var(--gold-light);opacity:.85}
+@media (hover:hover){.place:hover{background:rgba(255,255,255,.035);padding-left:1rem}}
+@media (min-width:960px){
+  .presence{padding:9rem 0}
+  .presence .wrap{display:grid;grid-template-columns:5fr 7fr;gap:6rem}
+  .place{grid-template-columns:4rem 1.1fr 1.2fr 1fr;align-items:baseline}
+  .place .cities,.place .what{grid-column:auto}
+}
+
+/* =========================================================
+   11. TEAM — horizontal slider ("volet")
+   Native scroll-snap (swipe on mobile, arrows on desktop).
+   The next profile peeks in on the right to invite scrolling;
+   the profile in focus is full strength, the others recede.
+   ========================================================= */
+.team{padding:6rem 0;background:var(--ivory);overflow:hidden}
+.team-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3rem}
+.team h2{color:var(--forest);margin-top:1.25rem}
+.team h2 .l2{color:var(--sage)}
+.slider-nav{display:flex;align-items:center;gap:1.25rem}
+.slider-count{font-family:var(--serif);font-size:1.15rem;color:var(--forest);min-width:4.5rem;text-align:center}
+.slider-count b{font-weight:400;color:var(--gold)}
+.arrow{width:52px;height:52px;border-radius:50%;border:.5px solid var(--forest);display:grid;place-items:center;color:var(--forest);transition:background .35s,color .35s,opacity .35s}
+.arrow svg{width:18px;height:18px}
+.arrow:hover:not(:disabled){background:var(--forest);color:var(--ivory)}
+.arrow:disabled{opacity:.25;cursor:default}
+
+.slider{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:0 var(--pad) 1rem;scroll-padding-left:var(--pad);
+  -ms-overflow-style:none;scrollbar-width:none;overscroll-behavior-x:contain}
+.slider::-webkit-scrollbar{display:none}
+@media (min-width:1280px){
+  /* align the first card with the page grid on very wide screens */
+  .slider{padding-left:calc((100vw - 1280px)/2 + var(--pad));scroll-padding-left:calc((100vw - 1280px)/2 + var(--pad))}
+}
+
+.profile{position:relative;flex:0 0 86%;scroll-snap-align:start;background:var(--cream);border:.5px solid var(--line-strong);
+  display:grid;grid-template-rows:auto 1fr;opacity:.45;transition:opacity .6s var(--ease)}
+/* a fine gold rule marks the profile in focus */
+.profile::before{content:"";position:absolute;left:-.5px;right:-.5px;top:-.5px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.profile.current{opacity:1}
+.profile.current::before{transform:scaleX(1)}
+/* text-only identity block: no fill, so it never reads as a missing photo */
+.profile-side{padding:2.25rem 1.75rem 1.5rem;border-bottom:.5px solid var(--line)}
+.profile-side .role{font-size:.78rem;letter-spacing:.06em;color:var(--gold);line-height:1.5;max-width:18rem}
+.profile-side h3{font-family:var(--serif);font-weight:300;font-size:2.6rem;line-height:1.02;color:var(--forest);margin-top:.9rem}
+.profile-side .base{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--sage)}
+.profile-main{padding:1.75rem 1.75rem 2.25rem}
+.profile-main .bio{font-size:.95rem;color:var(--warm-gray);line-height:1.85}
+.profile-main .creds{list-style:none;margin-top:1.75rem;padding-top:1.25rem;border-top:.5px solid var(--line-strong);display:grid;gap:.6rem}
+.profile-main .creds li{display:flex;gap:.8rem;font-size:.85rem;color:var(--forest);line-height:1.5}
+.profile-main .creds li::before{content:"";flex:0 0 16px;height:.5px;background:var(--gold);margin-top:.75em}
+
+.slider-progress{margin:2rem var(--pad) 0;height:.5px;background:var(--line-strong);position:relative;max-width:1280px}
+.slider-progress span{position:absolute;left:0;top:-.5px;height:2px;background:var(--gold);width:33.33%;transition:transform .5s var(--ease)}
+@media (min-width:1280px){.slider-progress{margin-left:auto;margin-right:auto;max-width:calc(1280px - 2*var(--pad))}}
+
+@media (min-width:760px){
+  .profile{flex-basis:min(78%,860px);grid-template-rows:none;grid-template-columns:4fr 7fr}
+  .profile-side{padding:3rem 2.25rem;border-bottom:0;border-right:.5px solid var(--line)}
+  .profile-main{padding:3rem 2.75rem}
+}
+@media (min-width:960px){.team{padding:10rem 0}}
+
+/* =========================================================
+   12. CONTACT + FOOTER
+   ========================================================= */
+.contact{background:var(--ink);color:var(--ivory);padding:6rem 0}
+.contact .wrap{display:grid;gap:3rem}
+.contact .label{color:var(--gold-light)}
+.contact h2{margin:1.25rem 0 1.5rem}
+.contact h2 .l2{color:var(--gold-light)}
+.contact-sub{color:rgba(200,216,202,.65);max-width:32rem;margin-bottom:2.5rem}
+.contact-email{display:inline-block;font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.4rem);color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(184,132,58,.45);padding-bottom:.35rem;margin-bottom:2rem;transition:color .25s,border-color .25s;word-break:break-word}
+.contact-email:hover{color:var(--ivory);border-color:var(--ivory)}
+.facts{list-style:none;border-top:1px solid rgba(200,216,202,.14)}
+.facts li{padding:1.25rem 0;border-bottom:1px solid rgba(200,216,202,.1)}
+.facts span{display:block;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem}
+.facts p{color:rgba(200,216,202,.75);font-size:.93rem}
+@media (min-width:960px){.contact{padding:10rem 0}.contact .wrap{grid-template-columns:7fr 5fr;gap:6rem;align-items:end}}
+
+footer{background:var(--ink);color:rgba(200,216,202,.45);font-size:.8rem;border-top:1px solid rgba(200,216,202,.1);padding:2.5rem 0 calc(2.5rem + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;gap:1rem}
+footer .slogan{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:rgba(200,216,202,.6)}
+footer .disclaimer{max-width:62rem;line-height:1.6}
+@media (min-width:960px){footer .top{display:flex;justify-content:space-between;gap:2rem}}
+
+/* =========================================================
+   13. SCROLL REVEALS (subtle) + REDUCED MOTION
+   ========================================================= */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.cap-item.reveal.in:nth-child(even){transform:none}
+@media (min-width:960px){.cap-item.reveal.in:nth-child(even){transform:translateY(5rem)}.cap-item.reveal:nth-child(even){transform:translateY(calc(5rem + 22px))}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  .reveal,.hero [data-in]{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="ZED Services, home">
+      <!-- original ZED mark, strokes recoloured via CSS -->
+      <svg viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <line class="stroke" x1="4" y1="4" x2="30" y2="4" stroke-width="3.5" stroke-linecap="square"/>
+        <line class="stroke" x1="30" y1="4" x2="4" y2="30" stroke-width="2.5" stroke-linecap="square"/>
+        <line class="stroke" x1="4" y1="30" x2="30" y2="30" stroke-width="3.5" stroke-linecap="square"/>
+        <circle cx="4" cy="30" r="3.5" fill="#b8843a"/>
+      </svg>
+      <span class="logo-text"><span class="logo-zed">ZED</span><span class="logo-sub">Services</span></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#track">Track record</a></li>
+        <li><a href="#presence">Presence</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact" class="nav-cta">Enquire</a></li>
+      </ul>
+    </nav>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    <div class="nav-progress" id="progress" aria-hidden="true"></div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#about">About</a>
+  <a href="#capabilities">Capabilities</a>
+  <a href="#track">Track record</a>
+  <a href="#presence">Presence</a>
+  <a href="#team">Team</a>
+  <a href="#contact">Enquire</a>
+  <p>China–Africa trade and projects, run by active operators.</p>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-media">
+    <img src="https://www.zed-it-services.fr/img-abidjan-highway.jpg" alt="Highway infrastructure in Abidjan" fetchpriority="high">
+  </div>
+  <div class="hero-panel">
+    <div class="hero-eyebrow" data-in="1">
+      <span class="label">China sourcing &amp; project facilitation</span>
+      <small>West &amp; Central Africa · China</small>
+    </div>
+    <h1 class="display" id="hero-title" data-in="2">China–Africa trade and projects, run by <span class="l2">active operators.</span></h1>
+    <p class="hero-sub" data-in="3">ZED Services helps entrepreneurs source and import from China, structures projects in Côte d'Ivoire, Cameroon and Senegal, and provides field services for organisations active in the region. We know these corridors firsthand because we run our own operations along them.</p>
+    <div class="hero-actions" data-in="4">
+      <a href="#contact" class="btn btn-gold">Discuss a project</a>
+      <a href="#track" class="btn btn-ghost">See our projects</a>
+    </div>
+    <div class="ledger" data-in="5">
+      <div><strong>3</strong><span>Countries of operation</span></div>
+      <div><strong>6</strong><span>Selected projects</span></div>
+      <div><strong>2021</strong><span>On the ground since</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO BAND ============ -->
+<div class="band">
+  <div class="wrap">
+    <p class="reveal">Bridging the gap between <em>great projects</em> and the right partners, since 2021.</p>
+    <ul class="reveal">
+      <li><strong>3</strong><span>Containers shipped from China</span></li>
+      <li><strong>24</strong><span>Residential units delivered</span></li>
+      <li><strong>3</strong><span>Land acquisitions supported</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about-left reveal">
+      <span class="label">Who we are</span>
+      <h2 class="display h2" id="about-title">A facilitation desk that also <span class="l2">operates.</span></h2>
+      <p class="about-body">ZED Services works where Chinese supply meets West African market reality. We help entrepreneurs import and build, and we support organisations that need reliable eyes on the ground. Because we run real estate and China–Côte d'Ivoire trade operations ourselves, we understand the projects we work on from the inside.</p>
+    </div>
+    <ul class="pillars reveal">
+      <li class="pillar" tabindex="0">
+        <h3>Sourcing &amp; Import Management <span class="tag-primary">Primary</span></h3>
+        <p>Purchasing coaching in China, introductions to reliable established suppliers, quality inspection and container groupage to Abidjan.</p>
+      </li>
+      <li class="pillar" tabindex="0">
+        <h3>Real Estate – Côte d'Ivoire</h3>
+        <p>Land acquisition support, project delivery and property management. We run these projects ourselves.</p>
+      </li>
+      <li class="pillar" tabindex="0">
+        <h3>China–Côte d'Ivoire Trade</h3>
+        <p>Sourcing, logistics and supplier relations along the corridor. Active supplier network in Guangzhou, Foshan and Yiwu.</p>
+      </li>
+      <li class="pillar" tabindex="0">
+        <h3>Project Structuring</h3>
+        <p>Business plans, financial models and project files, built to institutional standard.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="cap grain" id="capabilities" aria-labelledby="cap-title">
+  <div class="wrap">
+    <div class="cap-head reveal">
+      <div>
+        <span class="label">What we do</span>
+        <h2 class="display h2" id="cap-title" style="margin-top:1.25rem">Where we add <span class="l2">value.</span></h2>
+      </div>
+      <p>We are not a generalist firm. We focus on a few areas where our field presence makes a concrete difference.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap-item reveal">
+        <span class="who">For funds, family offices, institutions and companies</span>
+        <h3>Field Services &amp; Due Diligence</h3>
+        <p>On-site verification, operational due diligence, project monitoring and reporting for funds, family offices, institutions and companies active in the region.</p>
+      </article>
+      <article class="cap-item reveal">
+        <span class="who">For project owners</span>
+        <h3>Project Structuring &amp; Business Support</h3>
+        <p>Business plans, financial models, project files and launch support, adapted to project reality, not copied from a template. Fixed-fee engagements.</p>
+      </article>
+      <article class="cap-item reveal">
+        <span class="who">In-house</span>
+        <h3>Real Estate – Côte d'Ivoire</h3>
+        <p>Land acquisition support, construction follow-up and property management in Côte d'Ivoire and Senegal. Run in-house.</p>
+      </article>
+      <article class="cap-item reveal">
+        <span class="who">For importers</span>
+        <h3>China–Côte d'Ivoire Trade</h3>
+        <p>Purchasing coaching in China: we connect buyers with reliable, well-established suppliers in Guangzhou, Foshan and Yiwu and guide them through selection, negotiation and quality control. We also manage container groupage, consolidating goods from several buyers into shared containers shipped back to Côte d'Ivoire.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">How we work</span>
+      <h2 class="display h2" id="process-title">From brief to <span class="l2">delivery.</span></h2>
+    </div>
+    <ol class="steps" id="steps">
+      <li class="rail" aria-hidden="true"></li>
+      <li class="step"><span class="num">I</span><h3>Brief</h3><p>We understand your need: products, project, budget, timing.</p></li>
+      <li class="step"><span class="num">II</span><h3>Verify</h3><p>We do the groundwork: suppliers, sites, counterparties, numbers.</p></li>
+      <li class="step"><span class="num">III</span><h3>Execute</h3><p>Sourcing, inspection, shipping or project structuring, depending on your need. Clients always pay suppliers directly; we never hold client funds.</p></li>
+      <li class="step"><span class="num">IV</span><h3>Follow through</h3><p>We stay involved through execution, where things get complicated.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ TRACK RECORD ============ -->
+<section class="track" id="track" aria-labelledby="track-title">
+  <div class="wrap">
+    <div class="track-head reveal">
+      <div>
+        <span class="label">Track record</span>
+        <h2 class="display h2" id="track-title">Selected work, <span class="l2">presented with discretion.</span></h2>
+      </div>
+      <p>A selection of projects delivered or supported since 2021. Details available on request.</p>
+    </div>
+
+    <!-- Filters: counts are filled in by the script -->
+    <div class="filters" role="group" aria-label="Filter projects by sector">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">All<sup></sup></button>
+      <button class="filter" type="button" data-filter="realestate" aria-pressed="false">Real estate<sup></sup></button>
+      <button class="filter" type="button" data-filter="trade" aria-pressed="false">Trade<sup></sup></button>
+      <button class="filter" type="button" data-filter="impact" aria-pressed="false">Impact<sup></sup></button>
+      <button class="filter" type="button" data-filter="business" aria-pressed="false">Business<sup></sup></button>
+    </div>
+
+    <!-- Each card holds its full content; the drawer reads from it -->
+    <div class="grid" id="grid">
+      <button class="card reveal" type="button" data-sector="realestate" aria-haspopup="dialog">
+        <div class="card-img"><img src="https://www.zed-it-services.fr/img-crane.jpg" alt="Construction crane on the R+3 residential site in Abidjan" loading="lazy" style="object-position:bottom"><span class="open">View project</span></div>
+        <div class="card-meta"><span class="sector">Real Estate</span><span class="status done">Completed</span></div>
+        <h3>R+3 Residential Building</h3>
+        <p class="country">Côte d'Ivoire · Anono, Abidjan</p>
+        <p class="desc">Full-cycle delivery of a 24-unit residential building, from land acquisition to property management.</p>
+        <ul class="tags"><li>Land acquisition</li><li>Construction</li><li>Property mgmt</li></ul>
+      </button>
+
+      <button class="card reveal" type="button" data-sector="trade" aria-haspopup="dialog">
+        <div class="card-img"><img src="https://www.zed-it-services.fr/img-containers.jpg" alt="Shipping containers on the China–Côte d'Ivoire corridor" loading="lazy"><span class="open">View project</span></div>
+        <div class="card-meta"><span class="sector">Trade</span><span class="status ongoing">Ongoing</span></div>
+        <h3>China–CIV Trade Corridor</h3>
+        <p class="country">Côte d'Ivoire · China</p>
+        <p class="desc">End-to-end import/export management. 3 containers shipped to date: sourcing in China, containerization, reception, warehousing and local resale.</p>
+        <ul class="tags"><li>Sourcing</li><li>China corridor</li><li>Logistics</li></ul>
+      </button>
+
+      <button class="card reveal" type="button" data-sector="realestate" aria-haspopup="dialog">
+        <div class="card-img"><img src="https://www.zed-it-services.fr/img-road.jpg" alt="Road leading to land plots" loading="lazy"><span class="open">View project</span></div>
+        <div class="card-meta"><span class="sector">Real Estate</span><span class="status done">Completed</span></div>
+        <h3>Cross-Border Land Acquisition</h3>
+        <p class="country">Senegal · Côte d'Ivoire</p>
+        <p class="desc">Legal and administrative support for three land acquisitions, in Bingerville &amp; Abatta (CIV) and the Thiès region (Senegal), for a French client.</p>
+        <ul class="tags"><li>Cross-border</li><li>Land acquisition</li></ul>
+      </button>
+
+      <button class="card reveal" type="button" data-sector="realestate" aria-haspopup="dialog">
+        <div class="card-img"><img src="https://www.zed-it-services.fr/img-city.jpg" alt="City view of Abidjan" loading="lazy"><span class="open">View project</span></div>
+        <div class="card-meta"><span class="sector">Real Estate</span><span class="status done">Completed</span></div>
+        <h3>Student Studios, Abidjan</h3>
+        <p class="country">Côte d'Ivoire · Abidjan</p>
+        <p class="desc">Business plan and project file for an Ivorian entrepreneur developing two student studio units in Abidjan.</p>
+        <ul class="tags"><li>Business plan</li><li>Project file</li></ul>
+      </button>
+
+      <button class="card reveal" type="button" data-sector="impact" aria-haspopup="dialog">
+        <div class="card-img"><img src="https://www.zed-it-services.fr/img-biba.jpg" alt="Projet Biba site in southern Cameroon" loading="lazy"><span class="open">View project</span></div>
+        <div class="card-meta"><span class="sector">ESG &amp; Community Infrastructure</span><span class="status ongoing">Ongoing</span></div>
+        <h3>Projet Biba – Rural Hub</h3>
+        <p class="country">Cameroon · South Region</p>
+        <p class="desc">Community multipurpose hub designed from scratch: concept, project file and campaign materials.</p>
+        <ul class="tags"><li>Project file</li><li>Community</li><li>Rural impact</li></ul>
+      </button>
+
+      <button class="card reveal" type="button" data-sector="business" aria-haspopup="dialog">
+        <div class="card-img"><img src="https://www.zed-it-services.fr/img-pilates.jpg" alt="Pilates studio interior in Abidjan" loading="lazy"><span class="open">View project</span></div>
+        <div class="card-meta"><span class="sector">Business</span><span class="status ongoing">Ongoing</span></div>
+        <h3>Service Business Structuring</h3>
+        <p class="country">Côte d'Ivoire · Abidjan</p>
+        <p class="desc">Advising an entrepreneur in Abidjan on the launch of a premium Pilates studio: business structuring, equipment plan, digital presence and competitive analysis.</p>
+        <ul class="tags"><li>Business launch</li><li>Equipment</li><li>Digital</li></ul>
+      </button>
+    </div>
+
+    <div class="impact reveal">
+      <span class="label">Also</span>
+      <p>Alongside commercial mandates, ZED accompanies impact and community projects including skills-transfer programmes for rural artisans in Cameroon and local business structuring in Abidjan. Details available on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Project drawer (filled by script) -->
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="Close project details">×</button>
+  <img class="drawer-img" id="d-img" src="" alt="">
+  <div class="drawer-body">
+    <div class="card-meta" id="d-meta"></div>
+    <h3 id="drawer-title"></h3>
+    <p class="country" id="d-country"></p>
+    <p class="desc" id="d-desc"></p>
+    <h4>Scope</h4>
+    <ul class="tags" id="d-tags"></ul>
+    <p class="note">Details available on request.</p>
+    <a href="#contact" class="btn btn-ink" id="d-cta">Discuss a similar project</a>
+  </div>
+</aside>
+
+<!-- ============ PRESENCE ============ -->
+<section class="presence grain" id="presence" aria-labelledby="presence-title">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Where we operate</span>
+      <h2 class="display h2" id="presence-title">Three countries. <span class="l2">One network.</span></h2>
+      <p class="presence-intro">Our edge comes from people on the ground. Field presence across West &amp; Central Africa, with established sourcing hubs in China.</p>
+    </div>
+    <ul class="places reveal">
+      <li class="place"><span class="code">CI</span><h3>Côte d'Ivoire</h3><span class="cities">Abidjan · Bingerville</span><span class="what">Real estate · Trade · Business</span></li>
+      <li class="place"><span class="code">CM</span><h3>Cameroon</h3><span class="cities">Yaoundé · Ebolowa · Rural</span><span class="what">Impact · Community</span></li>
+      <li class="place"><span class="code">SN</span><h3>Senegal</h3><span class="cities">Thiès Region</span><span class="what">Land acquisition</span></li>
+      <li class="place"><span class="code">CN</span><h3>China</h3><span class="cities">Guangzhou · Foshan · Yiwu</span><span class="what">Purchasing coaching · Container groupage</span></li>
+      <li class="place"><span class="code">FR</span><h3>France</h3><span class="cities">Coordination · Client relations</span><span class="what">SAS registered</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TEAM (horizontal slider) ============ -->
+<section class="team" id="team" aria-labelledby="team-title">
+  <div class="wrap team-head reveal">
+    <div>
+      <span class="label">The team</span>
+      <h2 class="display h2" id="team-title">Three people. <span class="l2">Three complementary roles.</span></h2>
+    </div>
+    <div class="slider-nav">
+      <button class="arrow" type="button" id="team-prev" aria-label="Previous profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <span class="slider-count" aria-live="polite"><b id="team-current">1</b> / 3</span>
+      <button class="arrow" type="button" id="team-next" aria-label="Next profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="slider" id="team-slider" tabindex="0" aria-roledescription="carousel" aria-label="Team profiles">
+
+    <!-- 1. Rasak -->
+    <article class="profile current" aria-roledescription="slide" aria-label="1 of 3">
+      <div class="profile-side">
+        <p class="role">Field Advisor · Côte d'Ivoire Operations &amp; China Bridge</p>
+        <h3>Rasak Abideni</h3>
+        <p class="base">Abidjan · Guangzhou, Foshan, Yiwu</p>
+      </div>
+      <div class="profile-main">
+        <p class="bio">Rasak is ZED's anchor in Abidjan. An independent entrepreneur with over 10 years of on-the-ground experience, he has built a deep network across real estate, construction and import/export. He has accompanied every project ZED has run in Côte d'Ivoire, and develops our China connection with active contacts in Guangzhou, Foshan and Yiwu. Through Rasak, ZED offers purchasing coaching in China, connecting buyers with reliable, well-known suppliers, and manages container groupage to ship consolidated goods back to Côte d'Ivoire.</p>
+        <ul class="creds">
+          <li>10+ years entrepreneurship in Côte d'Ivoire</li>
+          <li>Network: real estate · construction · China-CIV import/export</li>
+          <li>Supplier contacts: electronics, appliances, BTP, vehicles</li>
+          <li>China purchasing coaching · container groupage to Côte d'Ivoire</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 2. Reina -->
+    <article class="profile" aria-roledescription="slide" aria-label="2 of 3">
+      <div class="profile-side">
+        <p class="role">Project Structuring &amp; Operations</p>
+        <h3>Reina Zang</h3>
+        <p class="base">France · Switzerland</p>
+      </div>
+      <div class="profile-main">
+        <p class="bio">Reina leads project structuring and client relations. Her background spans financial audit, private equity and advisory work across Switzerland, France, Cameroon and London. Within ZED, she builds business plans, financial models and the control processes behind every project.</p>
+        <ul class="creds">
+          <li>MSc Banking &amp; International Finance · Master in Management, TBS Education</li>
+          <li>Experience across Switzerland, France, Cameroon and London</li>
+          <li>Expertise: project structuring · financial analysis · impact</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 3. Liliane -->
+    <article class="profile" aria-roledescription="slide" aria-label="3 of 3">
+      <div class="profile-side">
+        <p class="role">Field Advisor · Social Impact &amp; Cameroon Operations</p>
+        <h3>Liliane Zang</h3>
+        <p class="base">Cameroon · Urban &amp; Rural</p>
+      </div>
+      <div class="profile-main">
+        <p class="bio">Liliane brings a strong background in corporate management, accounting, and hands-on entrepreneurship to ZED Services. Having successfully managed multiple SMEs in France, she combines administrative rigor with operational execution. Her extensive field network serves as ZED's primary anchor for sourcing, compliance, and multi-sector project coordination in Cameroon.</p>
+        <ul class="creds">
+          <li>Corporate Management &amp; Accounting &amp; Entrepreneur</li>
+          <li>Strong field connectivity across Cameroon (Urban &amp; Rural)</li>
+          <li>Operational due diligence · Stakeholder engagement &amp; community relations</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+  <div class="slider-progress" aria-hidden="true"><span id="team-bar"></span></div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact grain" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Get in touch</span>
+      <h2 class="display h2" id="contact-title">A project. <span class="l2">A conversation.</span></h2>
+      <p class="contact-sub">We are selective in the projects we take on. If you want to import from China, structure a project in West or Central Africa, or need reliable field work in the region, we are happy to talk.</p>
+      <a href="mailto:rzang@zed-it-services.fr" class="contact-email">rzang@zed-it-services.fr</a><br>
+      <a href="https://www.linkedin.com/company/zed-services-fr/" target="_blank" rel="noopener" class="btn btn-gold">Connect on LinkedIn</a>
+    </div>
+    <ul class="facts reveal">
+      <li><span>Primary markets</span><p>Côte d'Ivoire · Cameroon · Senegal</p></li>
+      <li><span>Sectors</span><p>Real estate · Trade · Impact · Agriculture</p></li>
+      <li><span>Presence</span><p>Field teams in West &amp; Central Africa · Sourcing network in China</p></li>
+      <li><span>Based</span><p>France (SAS)</p></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <span>© 2026 ZED Services SAS · France · All rights reserved</span>
+      <span class="slogan">Bridging the gap between great projects and the right partners.</span>
+    </div>
+    <p class="disclaimer">ZED Services SAS provides commercial, sourcing, project structuring and field services. It does not provide investment advice, lending, credit intermediation or payment services, and does not hold or manage third-party funds.</p>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   ZED Services — interactions (vanilla JS, no dependencies)
+   ========================================================= */
+(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 1. Nav: condense on scroll + reading progress ---- */
+  const nav = document.getElementById('nav');
+  const progress = document.getElementById('progress');
+  let ticking = false;
+  function onScroll() {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 60);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+  onScroll();
+
+  /* active link follows the section in view */
+  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const sectionObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['about', 'capabilities', 'track', 'presence', 'team'].forEach(id => {
+    const el = document.getElementById(id); if (el) sectionObs.observe(el);
+  });
+
+  /* ---- 2. Mobile menu ---- */
+  const burger = document.querySelector('.burger');
+  const menu = document.getElementById('mobile-menu');
+  function setMenu(open) {
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.classList.toggle('locked', open);
+    nav.classList.toggle('scrolled', open || window.scrollY > 60);
+  }
+  burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  /* ---- 3. Subtle scroll reveals ---- */
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ---- 4. Process: light each step as it reaches mid-screen ---- */
+  const steps = [...document.querySelectorAll('.step')];
+  const track = document.querySelector('.steps .rail');
+  const isDesktop = () => window.matchMedia('(min-width:960px)').matches;
+  function updateTrack() {
+    const lit = steps.filter(s => s.classList.contains('lit')).length;
+    const ratio = lit <= 1 ? 0 : (lit - 1) / (steps.length - 1);
+    track.style.transform = isDesktop() ? 'scaleX(' + ratio + ')' : 'scaleY(' + ratio + ')';
+  }
+  const stepObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('lit'); });
+    updateTrack();
+  }, { rootMargin: '0px 0px -40% 0px' });
+  steps.forEach(s => stepObs.observe(s));
+  window.addEventListener('resize', updateTrack);
+
+  /* ---- 5. Track record filters ---- */
+  const cards = [...document.querySelectorAll('.card')];
+  const filters = [...document.querySelectorAll('.filter')];
+
+  // counts per sector
+  filters.forEach(btn => {
+    const f = btn.dataset.filter;
+    btn.querySelector('sup').textContent = f === 'all' ? cards.length : cards.filter(c => c.dataset.sector === f).length;
+  });
+
+  // asymmetric layout: first visible card leads, the third is offset
+  function layout() {
+    const visible = cards.filter(c => !c.classList.contains('hide'));
+    cards.forEach(c => c.classList.remove('lead', 'offset'));
+    if (visible.length > 2) visible[0].classList.add('lead');
+    if (visible.length > 3) visible[2].classList.add('offset');
+  }
+  layout();
+
+  function applyFilter(f) {
+    filters.forEach(b => b.setAttribute('aria-pressed', b.dataset.filter === f));
+    const show = c => f === 'all' || c.dataset.sector === f;
+    if (reduceMotion) {
+      cards.forEach(c => c.classList.toggle('hide', !show(c)));
+      layout(); return;
+    }
+    // fade out, swap, fade in
+    cards.forEach(c => c.classList.add('fading'));
+    setTimeout(() => {
+      cards.forEach(c => { c.classList.toggle('hide', !show(c)); c.classList.add('in'); });
+      layout();
+      requestAnimationFrame(() => requestAnimationFrame(() => cards.forEach(c => c.classList.remove('fading'))));
+    }, 280);
+  }
+  filters.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+
+  /* ---- 7. Team slider ---- */
+  const slider = document.getElementById('team-slider');
+  const profiles = [...slider.querySelectorAll('.profile')];
+  const prev = document.getElementById('team-prev');
+  const next = document.getElementById('team-next');
+  const counter = document.getElementById('team-current');
+  const bar = document.getElementById('team-bar');
+  let current = 0;
+
+  function setCurrent(i) {
+    current = i;
+    profiles.forEach((p, k) => p.classList.toggle('current', k === i));
+    counter.textContent = i + 1;
+    bar.style.transform = 'translateX(' + (i * 100) + '%)';
+    prev.disabled = i === 0;
+    next.disabled = i === profiles.length - 1;
+  }
+  function goTo(i) {
+    i = Math.max(0, Math.min(profiles.length - 1, i));
+    const left = profiles[i].offsetLeft - parseFloat(getComputedStyle(slider).scrollPaddingLeft || 0);
+    slider.scrollTo({ left: left, behavior: reduceMotion ? 'auto' : 'smooth' });
+    setCurrent(i);
+  }
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+  slider.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+  });
+
+  // keep the counter in sync when the visitor swipes or drags
+  let scrollT;
+  slider.addEventListener('scroll', () => {
+    clearTimeout(scrollT);
+    scrollT = setTimeout(() => {
+      const pad = parseFloat(getComputedStyle(slider).scrollPaddingLeft || 0);
+      let best = 0, dist = Infinity;
+      profiles.forEach((p, k) => {
+        const d = Math.abs(p.offsetLeft - pad - slider.scrollLeft);
+        if (d < dist) { dist = d; best = k; }
+      });
+      // at the far right edge, the last profile is the current one
+      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 4) best = profiles.length - 1;
+      setCurrent(best);
+    }, 90);
+  }, { passive: true });
+
+  // a click on a receding profile brings it into focus
+  profiles.forEach((p, k) => p.addEventListener('click', () => { if (k !== current) goTo(k); }));
+  setCurrent(0);
+
+  /* ---- 6. Project drawer ---- */
+  const drawer = document.getElementById('drawer');
+  const scrim = document.getElementById('scrim');
+  const closeBtn = drawer.querySelector('.drawer-close');
+  let lastFocus = null;
+
+  function openDrawer(card) {
+    lastFocus = card;
+    const img = card.querySelector('img');
+    const dImg = document.getElementById('d-img');
+    dImg.src = img.src; dImg.alt = img.alt;
+    dImg.style.objectPosition = img.style.objectPosition || 'center';
+    document.getElementById('d-meta').innerHTML = card.querySelector('.card-meta').innerHTML;
+    document.getElementById('drawer-title').textContent = card.querySelector('h3').textContent;
+    document.getElementById('d-country').textContent = card.querySelector('.country').textContent;
+    document.getElementById('d-desc').textContent = card.querySelector('.desc').textContent;
+    document.getElementById('d-tags').innerHTML = card.querySelector('.tags').innerHTML;
+
+    drawer.classList.add('open'); scrim.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false'); scrim.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('locked');
+    drawer.scrollTop = 0;
+    setTimeout(() => closeBtn.focus(), 50);
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open'); scrim.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true'); scrim.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('locked');
+    if (lastFocus) lastFocus.focus({ preventScroll: true });
+  }
+  cards.forEach(c => c.addEventListener('click', () => openDrawer(c)));
+  closeBtn.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  document.getElementById('d-cta').addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (drawer.classList.contains('open')) closeDrawer();
+      if (menu.classList.contains('open')) setMenu(false);
+    }
+    // keep keyboard focus inside the open drawer
+    if (e.key === 'Tab' && drawer.classList.contains('open')) {
+      const f = [...drawer.querySelectorAll('button, a[href]')];
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+})();
+</script>
+</body>
+</html>
